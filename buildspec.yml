@@ -1,0 +1,18 @@
+version: 0.2
+env: 
+  parameter-store: 
+    MONGO: "/abhishek/mongo"
+phases:
+  pre_build:
+    commands:
+       - echo Build Started on `date`
+  build:
+    commands:
+       - echo MONGODB_URI=$MONGO >> .env 
+       - npm install
+  post_build:
+       - echo Build Completed on `date`
+
+artifacts:
+  files:
+    - '**/*'
