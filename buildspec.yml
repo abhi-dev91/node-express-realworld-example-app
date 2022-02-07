@@ -11,6 +11,7 @@ phases:
        - echo MONGODB_URI=$MONGO >> .env 
        - npm install
   post_build:
+    commands:
        - echo Build Completed on `date`
 
 artifacts:
