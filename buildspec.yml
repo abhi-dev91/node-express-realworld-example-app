@@ -8,7 +8,7 @@ phases:
        - echo Build Started on `date`
   build:
     commands:
-       - sed -i 's/process.env.MONGODB_URI'$MONGO app.js 
+       - sed -i 's/process.env.MONGODB_URI/'$MONGO'/' app.js
        - npm install
   post_build:
     commands:
