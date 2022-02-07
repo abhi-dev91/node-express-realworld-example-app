@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pm2 stop app.js
+pm2 stop /api/app.js
