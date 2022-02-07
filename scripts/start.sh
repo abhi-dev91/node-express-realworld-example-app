@@ -1,2 +1,2 @@
 #!/bin/bash
-pm2 start /home/ubuntu/app.js
+pm2 start /home/ubuntu/api/app.js
