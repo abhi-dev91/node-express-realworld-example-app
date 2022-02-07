@@ -1,4 +1,4 @@
 #!/bin/bash
 
 #pm2 stop app.js
-echo hello
+pm2 stop /home/ubuntu/api/app.js

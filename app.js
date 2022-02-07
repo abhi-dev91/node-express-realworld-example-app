@@ -1,3 +1,4 @@
+require('dotenv').config()
 var http = require('http'),
     path = require('path'),
     methods = require('methods'),
@@ -33,7 +34,7 @@ if (!isProduction) {
 if(isProduction){
   mongoose.connect(process.env.MONGODB_URI);
 } else {
-  mongoose.connect('localhost:27017');
+  mongoose.connect(process.env.MONGODB_URI);
   mongoose.set('debug', true);
 }
 
