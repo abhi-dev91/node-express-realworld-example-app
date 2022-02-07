@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: .
-    destination: ./api
+    destination: /api
 hooks:
   BeforeInstall:
     - location: scripts/pre_start.sh
