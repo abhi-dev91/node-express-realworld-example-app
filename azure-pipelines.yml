@@ -18,10 +18,11 @@ steps:
 - script: |
     npm install
   displayName: 'npm install'
-
-- task: CopyPublishBuildArtifacts@1
+  
+- task: ArchiveFiles@2
   inputs:
-    CopyRoot: '/'
-    Contents: '*'
-    ArtifactName: 'node-app'
-    ArtifactType: 'FilePath'
+    rootFolderOrFile: '$(Build.BinariesDirectory)'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
