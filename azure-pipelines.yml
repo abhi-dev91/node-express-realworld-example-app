@@ -36,4 +36,4 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'backend'
     publishLocation: 'Container'
-    StoreAsTar: true
+    StoreAsTar: false
