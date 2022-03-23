@@ -30,13 +30,10 @@ steps:
     replaceExistingArchive: true
 
 
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: '$(Pipeline.Workspace)$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).tar.gz'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'backend.tar.gz'
     publishLocation: 'Container'
     StoreAsTar: true
