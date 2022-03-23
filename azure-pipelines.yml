@@ -33,5 +33,10 @@ steps:
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(Pipeline.Workspace)$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    artifact: 'backend.zip'
-    publishLocation: 'pipeline'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).tar.gz'
+    ArtifactName: 'backend.tar.gz'
+    publishLocation: 'Container'
+    StoreAsTar: true
