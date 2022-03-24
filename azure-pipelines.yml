@@ -21,11 +21,12 @@ steps:
   
 
 
-
-
-
-- task: PublishBuildArtifacts@1
+- task: ArchiveFiles@2
   inputs:
-    PathtoPublish: /home/azureuser/agent/_work/1/s
-    ArtifactName: 'backend'
-    publishLocation: 'Container'
+    rootFolderOrFile: '$(Build.Repository.LocalPath)'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+
+
