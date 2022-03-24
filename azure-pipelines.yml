@@ -21,13 +21,6 @@ steps:
   
 
 
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: './*'
-    includeRootFolder: false
-    archiveType: 'zip'
-    archiveFile: '.'
-    replaceExistingArchive: true
 
 
 
