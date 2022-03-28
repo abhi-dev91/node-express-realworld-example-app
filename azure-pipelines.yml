@@ -33,5 +33,5 @@ steps:
     galleryImageId: '/subscriptions/f69deabc-3bd7-4935-a3ef-c4693a2b5ca1/resourceGroups/abhi-HA/providers/Microsoft.Compute/galleries/myVMSSGallery'
     replicationRegions: 'southeastasia'
     ibSubscription: 'development(f69deabc-3bd7-4935-a3ef-c4693a2b5ca1)'
-    ibAzureResourceGroup: 'myVMSSResourceGroup'
+    ibAzureResourceGroup: 'abhi-HA'
     ibLocation: 'southeastasia'
