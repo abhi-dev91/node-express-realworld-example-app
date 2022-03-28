@@ -21,18 +21,17 @@ steps:
   
 
 
-
-
-
-
 - task: AzureImageBuilderTask@1
+  displayName: 'Azure VM Image Builder Task'
   inputs:
     managedIdentity: '/subscriptions/f69deabc-3bd7-4935-a3ef-c4693a2b5ca1/resourceGroups/abhi-HA/providers/Microsoft.ManagedIdentity/userAssignedIdentities/abhi-managedID'
-    customImageResourceId: '/subscriptions/f69deabc-3bd7-4935-a3ef-c4693a2b5ca1/resourcegroups/abhi-HA/providers/Microsoft.Compute/galleries/abhiimages/images/nodedefination/versions/1.0.0'
-    packagePath: '$(Build.Repository.LocalPath)'
-    inlineScript: 'echo Hello World'
+    imageSource: 'marketplace'
+    packagePath: '$(System.DefaultWorkingDirectory)'
+    inlineScript: 'echo hello world'
     storageAccountName: 'abhiaccountstorage'
-    managedImageLocation: 'eastasia'
-    ibSubscription: 'abhi-HA-rg-arm'
-    ibAzureResourceGroup: 'abhi-HA'
+    distributeType: 'sig'
+    galleryImageId: '/subscriptions/f69deabc-3bd7-4935-a3ef-c4693a2b5ca1/resourceGroups/abhi-HA/providers/Microsoft.Compute/galleries/myVMSSGallery'
+    replicationRegions: 'southeastasia'
+    ibSubscription: 'development(f69deabc-3bd7-4935-a3ef-c4693a2b5ca1)'
+    ibAzureResourceGroup: 'myVMSSResourceGroup'
     ibLocation: 'southeastasia'
