@@ -30,7 +30,7 @@ steps:
     inlineScript: 'echo hello world'
     storageAccountName: 'abhiaccountstorage'
     distributeType: 'sig'
-    galleryImageId: '/subscriptions/f69deabc-3bd7-4935-a3ef-c4693a2b5ca1/resourceGroups/abhi-HA/providers/Microsoft.Compute/galleries/myVMSSGallery'
+    galleryImageId: '/subscriptions/f69deabc-3bd7-4935-a3ef-c4693a2b5ca1/resourcegroups/abhi-HA/providers/Microsoft.Compute/galleries/abhisig'
     replicationRegions: 'southeastasia'
     ibSubscription: 'development(f69deabc-3bd7-4935-a3ef-c4693a2b5ca1)'
     ibAzureResourceGroup: 'abhi-HA'
