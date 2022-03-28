@@ -32,7 +32,6 @@ steps:
     packagePath: '$(Build.Repository.LocalPath)'
     inlineScript: 'echo Hello World'
     storageAccountName: 'abhiaccountstorage'
-    imageIdForDistribute: '/subscriptions/f69deabc-3bd7-4935-a3ef-c4693a2b5ca1/resourceGroups/abhi-HA/providers/Microsoft.Compute/virtualMachines/backend-agent'
     managedImageLocation: 'eastasia'
     ibSubscription: 'abhi-HA-rg-arm'
     ibAzureResourceGroup: 'abhi-HA'
