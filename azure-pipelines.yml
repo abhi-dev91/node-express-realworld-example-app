@@ -20,16 +20,16 @@ steps:
   displayName: 'npm install'
   
 
-
-- task: AzureImageBuilderTask@1
-  displayName: 'Azure VM Image Builder Task'
+- task: ArchiveFiles@2
   inputs:
-    managedIdentity: '/subscriptions/f69deabc-3bd7-4935-a3ef-c4693a2b5ca1/resourceGroups/abhi-HA/providers/Microsoft.ManagedIdentity/userAssignedIdentities/abhi-managedID'
-    imageSource: 'marketplace'
-    packagePath: '$(System.DefaultWorkingDirectory)'
-    inlineScript: 'echo hello world'
-    storageAccountName: 'abhiaccountstorage'
-    distributeType: 'vhd'
-    ibSubscription: 'development(f69deabc-3bd7-4935-a3ef-c4693a2b5ca1)'
-    ibAzureResourceGroup: 'abhi-HA'
-    ibLocation: 'southeastasia'
+    rootFolderOrFile: '$(Build.Repository.LocalPath)'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'backend-app'
+    publishLocation: 'Container'
